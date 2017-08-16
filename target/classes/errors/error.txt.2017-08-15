@@ -1,0 +1,1658 @@
+2017-08-15 13:01:07,280 -[ERROR]  method:[org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:331) (10349ms)] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'PatientTempService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:725)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:901)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:877)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1809)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:301)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:618)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:565)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:301)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1487)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:97)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1328)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1420)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:848)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'PatientTempService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:443)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:417)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 60 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1471)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1216)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:443)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:417)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 73 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 88 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:466)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1564)
+	... 95 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:464)
+	... 98 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.apache.ibatis.builder.BaseBuilder.resolveJdbcType(BaseBuilder.java:66)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:374)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:279)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:251)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:243)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 100 more
+Caused by: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at java.lang.Enum.valueOf(Enum.java:236)
+	at org.apache.ibatis.type.JdbcType.valueOf(JdbcType.java:25)
+	at org.apache.ibatis.builder.BaseBuilder.resolveJdbcType(BaseBuilder.java:64)
+	... 105 more
+2017-08-15 13:01:39,770 -[ERROR]  method:[org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:331) (4652ms)] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'PatientTempService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:725)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:901)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:877)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1809)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:301)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:618)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:565)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:301)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1487)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:97)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1328)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1420)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:848)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'PatientTempService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:443)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:417)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 60 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1471)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1216)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:443)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:417)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 73 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 88 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:466)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1564)
+	... 95 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:464)
+	... 98 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving JdbcType. Cause: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at org.apache.ibatis.builder.BaseBuilder.resolveJdbcType(BaseBuilder.java:66)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildResultMappingFromContext(XMLMapperBuilder.java:374)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:279)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:251)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:243)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 100 more
+Caused by: java.lang.IllegalArgumentException: No enum constant org.apache.ibatis.type.JdbcType.Double
+	at java.lang.Enum.valueOf(Enum.java:236)
+	at org.apache.ibatis.type.JdbcType.valueOf(JdbcType.java:25)
+	at org.apache.ibatis.builder.BaseBuilder.resolveJdbcType(BaseBuilder.java:64)
+	... 105 more
+2017-08-15 13:35:53,176 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (8402ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:35:53,578 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:54) (8804ms)] - 【Exception】========异常信息:org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'p.id_card' in 'field list'
+### The error may exist in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]
+### The error may involve beacool.dao.PatientTempDao.queryPatientList-Inline
+### The error occurred while setting parameters
+### SQL: select p.id_card, p.sex, p.name, p.birthday, pt.temp, pp.position from           patient p2,         (select a.temp, a.id_card from         (         select * from patient_temperature order by update_time DESC         ) a GROUP BY a.id_card         ) pt,         (select a.position, a.id_card from         (         select * from patient_position order by update_time DESC         ) a GROUP BY a.id_card         ) pp          WHERE p.id_card = pt.id_card and p.id_card = pp.id_card                                                                              ORDER BY pt.temp DESC                              limit ?, ?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'p.id_card' in 'field list'
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'p.id_card' in 'field list'
+2017-08-15 13:35:53,582 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:64) (8808ms)] - 【result】###########################返回数据：{list=[], total=0, message=数据库处理错误, errorCode=-1}
+2017-08-15 13:38:40,902 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (10676ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:38:41,405 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:64) (11179ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=0}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=0}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=0}], total=3, message=请求成功, errorCode=0}
+2017-08-15 13:39:44,190 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (9276ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:39:44,773 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:64) (9859ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=0}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=0}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=0}], total=3, message=请求成功, errorCode=0}
+2017-08-15 13:40:44,028 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (11204ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:40:44,506 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:64) (11682ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0}
+2017-08-15 13:45:16,726 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (283902ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:45:17,047 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:66) (284223ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0}
+2017-08-15 13:45:36,269 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (303445ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:45:36,565 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:66) (303741ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0}
+2017-08-15 13:46:34,860 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (362036ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:46:35,156 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:62) (362332ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0}
+2017-08-15 13:50:12,955 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (10099ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:50:13,456 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:67) (10600ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 13:53:24,419 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (8470ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:53:24,918 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:67) (8969ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 13:54:30,444 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (74495ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:54:30,778 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:67) (74829ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 13:58:09,772 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (293823ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:58:10,087 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:67) (294138ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 13:59:42,652 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (386703ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 13:59:42,971 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:67) (387022ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 14:04:45,049 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (21829ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:05:01,204 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (37984ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:07:18,443 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (175223ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:07:53,640 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (210420ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:08:18,236 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (235016ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:08:39,425 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (256205ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:11:04,184 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:39) (9712ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:11:09,927 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:67) (15455ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 14:15:36,090 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:40) (12218ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:15:36,591 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:68) (12719ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 14:57:01,345 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:40) (2497473ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:PatientTemp{temp=0.0, tempDic=0, position='null', hospitalization=0}
+2017-08-15 14:57:21,186 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:68) (2517314ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 15:06:20,331 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:41) (14923ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:BasePage{pageNum=1, pageSize=20, totalPage=0, totalNum=0, list=null}
+2017-08-15 15:06:20,536 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:57) (15128ms)] - 【Exception】========异常信息:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'idCard' in 'class beacool.entity.base.BasePage'
+2017-08-15 15:06:20,539 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:69) (15131ms)] - 【result】###########################返回数据：{list=[], total=0, message=数据库处理错误, errorCode=-1, totalPages=0}
+2017-08-15 15:07:56,296 -[ERROR]  method:[org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:331) (4265ms)] - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'PatientTempService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:725)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:901)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:877)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:652)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1809)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:301)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:618)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:565)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:301)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1487)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:97)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1328)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1420)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:848)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:322)
+	at sun.rmi.transport.Transport$2.run(Transport.java:202)
+	at sun.rmi.transport.Transport$2.run(Transport.java:199)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:198)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:567)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.access$400(TCPTransport.java:619)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:684)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$1.run(TCPTransport.java:681)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:681)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'PatientTempService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:443)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:417)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 60 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'patientTempDao' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\dao\PatientTempDao.class]: Cannot resolve reference to bean 'sqlSessionFactory' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1471)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1216)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:443)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:417)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:542)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:155)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:304)
+	... 73 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in file [F:\project\springmaven\target\Demo\WEB-INF\classes\spring-context.xml]: Invocation of init method failed; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 88 more
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\project\springmaven\target\Demo\WEB-INF\classes\beacool\mapper\patientTemp.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:466)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:340)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1564)
+	... 95 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:464)
+	... 98 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:66)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:128)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:118)
+	... 100 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'beacool.entity.BasePage'.  Cause: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:117)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:130)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 104 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: beacool.entity.BasePage
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:190)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:256)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:113)
+	... 106 more
+2017-08-15 15:09:37,090 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:41) (8915ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:BasePage{pageNum=1, pageSize=20, totalPage=0, totalNum=0, list=null}
+2017-08-15 15:09:37,288 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:57) (9113ms)] - 【Exception】========异常信息:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'idCard' in 'class beacool.entity.base.BasePage'
+2017-08-15 15:09:37,290 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:69) (9115ms)] - 【result】###########################返回数据：{list=[], total=0, message=数据库处理错误, errorCode=-1, totalPages=0}
+2017-08-15 15:11:32,637 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:41) (9152ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:BasePage{pageNum=1, pageSize=20, totalPage=0, totalNum=0, list=null}
+2017-08-15 15:11:32,837 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:57) (9352ms)] - 【Exception】========异常信息:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'idCard' in 'class beacool.entity.base.BasePage'
+2017-08-15 15:11:32,839 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:69) (9354ms)] - 【result】###########################返回数据：{list=[], total=0, message=数据库处理错误, errorCode=-1, totalPages=0}
+2017-08-15 15:12:29,255 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:41) (65770ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:BasePage{pageNum=0, pageSize=0, totalPage=0, totalNum=0, list=null}
+2017-08-15 15:12:29,342 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:57) (65857ms)] - 【Exception】========异常信息:org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'idCard' in 'class beacool.entity.base.BasePage'
+2017-08-15 15:16:31,998 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:41) (13909ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:BasePage{pageNum=1, pageSize=20, totalPage=0, totalNum=0, list=null}
+2017-08-15 15:16:32,490 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:69) (14401ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 15:49:13,639 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:41) (1975550ms)] - 【findPatientList.do】-------------------------------------------------------------入参参数:BasePage{pageNum=1, pageSize=20, totalPage=0, totalNum=0, list=null}
+2017-08-15 15:49:43,860 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005771ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1295)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1248)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,863 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005774ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,864 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005775ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,873 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005784ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,874 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005785ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,891 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005802ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,892 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005803ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,894 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005805ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,920 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005831ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,921 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005832ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,936 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005847ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,938 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005849ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,953 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005864ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,955 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005866ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,970 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005881ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 18 more
+2017-08-15 15:49:43,971 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005882ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:43,974 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005885ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:43,975 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005886ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,000 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005911ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,001 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005912ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,025 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005936ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,027 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005938ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,040 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005951ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,042 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005953ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,055 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005966ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,057 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005968ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,074 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005985ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,075 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2005986ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,106 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2006017ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,107 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2006018ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:49:44,122 -[ERROR]  method:[com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1651) (2006033ms)] - create connection error
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1360)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1414)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:1649)
+Caused by: java.net.UnknownHostException: mysql.rdsm4caepnbupc3.rds.bj.baidubce.com
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1252)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1164)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:190)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
+	... 17 more
+2017-08-15 15:50:14,820 -[ERROR]  method:[beacool.controller.PatientController.queryPatientList(PatientController.java:69) (2036731ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, tempDic=0, position='207室', hospitalization=1}, PatientTemp{temp=37.5, tempDic=0, position='208室', hospitalization=1}, PatientTemp{temp=37.2, tempDic=0, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 16:12:18,090 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (83324ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 16:15:19,097 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (264331ms)] - 【result】###########################返回数据：{list=[], total=0, message=请求成功, errorCode=0, totalPages=0}
+2017-08-15 16:17:36,226 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:43) (92298ms)] - 【Exception】========异常信息:org.apache.ibatis.binding.BindingException: Mapper method 'beacool.dao.PatientTempDao.queryPatientListTotal attempted to return null from a method with a primitive return type (long).
+2017-08-15 16:17:36,228 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (92300ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=0, message=数据库处理错误, errorCode=-1, totalPages=0}
+2017-08-15 16:18:01,919 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:43) (117991ms)] - 【Exception】========异常信息:org.apache.ibatis.binding.BindingException: Mapper method 'beacool.dao.PatientTempDao.queryPatientListTotal attempted to return null from a method with a primitive return type (long).
+2017-08-15 16:18:01,919 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (117991ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=0, message=数据库处理错误, errorCode=-1, totalPages=0}
+2017-08-15 16:18:50,986 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:43) (167058ms)] - 【Exception】========异常信息:org.apache.ibatis.binding.BindingException: Mapper method 'beacool.dao.PatientTempDao.queryPatientListTotal attempted to return null from a method with a primitive return type (long).
+2017-08-15 16:18:50,987 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (167059ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=0, message=数据库处理错误, errorCode=-1, totalPages=0}
+2017-08-15 16:20:45,309 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (14867ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:20:58,968 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (28526ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:21:40,520 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (70078ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:21:55,864 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:55) (85422ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:25:14,945 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:56) (10452ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:29:32,652 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:79) (11525ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:53:54,761 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (11298ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 16:53:54,983 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (11520ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:56:28,846 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (165383ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 16:56:28,915 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (165452ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 16:56:39,999 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (176536ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 16:56:40,068 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (176605ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 17:04:04,255 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (280019ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:04,546 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (280310ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:06,567 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (282331ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:06,661 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (282425ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:10,967 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (286731ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:11,071 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (286835ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:12,150 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (287914ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:12,257 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (288021ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:16,561 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (292325ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:16,630 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (292394ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:17,668 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (293432ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:17,740 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (293504ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:18,618 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (294382ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:18,687 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (294451ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:19,502 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (295266ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:19,575 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (295339ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:21,701 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (297465ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:21,771 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (297535ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:41,970 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (317734ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:42,040 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (317804ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:42,951 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (318715ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:43,047 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (318811ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:04:50,690 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (326454ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:04:50,759 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (326523ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:05:21,760 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (357524ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:05:21,911 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (357675ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:05:27,553 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (363317ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:05:27,675 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (363439ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:06:47,099 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (442863ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:06:47,172 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (442936ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:09:22,253 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (598017ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 17:09:22,325 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (598089ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 17:41:23,906 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (6045ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@7043f55
+2017-08-15 17:41:24,541 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (6680ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@7043f55
+2017-08-15 17:43:09,923 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (5367ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@7e699b0
+2017-08-15 17:43:10,549 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (5993ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@7e699b0
+2017-08-15 17:55:33,748 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (749192ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@7e699b0
+2017-08-15 18:29:57,013 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (8934ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:29:57,409 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (9330ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:29:57,792 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (9713ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:29:57,794 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (9715ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:29:59,943 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (11864ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:30:00,672 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (12593ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:30:00,882 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (12803ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 18:30:01,074 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (12995ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:01,139 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (13060ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:30:01,164 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (13085ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:01,164 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (13085ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:30:01,313 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (13234ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:01,386 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (13307ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:30:04,213 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (16134ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:04,235 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (16156ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:30:04,327 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (16248ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:45,189 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (57110ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:30:45,218 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (57139ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:45,352 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (57273ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:30:45,420 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (57341ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 18:30:45,426 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (57347ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@4b899ae
+2017-08-15 18:30:45,508 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:22) (57429ms)] - servletRequest%%%%%%%%%%%%%%%org.apache.catalina.connector.RequestFacade@2b081bf0
+2017-08-15 18:33:27,383 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:23) (7018ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@1a2d9134
+2017-08-15 18:33:27,989 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:23) (7624ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@58c97bbb
+2017-08-15 18:33:38,276 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (17911ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:33:38,475 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (18110ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 18:33:38,641 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:23) (18276ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@31fcfe8b
+2017-08-15 18:33:38,689 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:23) (18324ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@2edce172
+2017-08-15 18:33:38,708 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:23) (18343ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@447a1b5d
+2017-08-15 18:33:38,851 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (18486ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:33:38,925 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (18560ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 18:33:39,012 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:23) (18647ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@3ab07463
+2017-08-15 18:35:01,663 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (4617ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@5fabe075
+2017-08-15 18:35:02,758 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (5712ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@6c0def3f
+2017-08-15 18:35:05,733 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (8687ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@10968c3c
+2017-08-15 18:35:05,847 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (8801ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:35:06,072 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (9026ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 18:35:06,290 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (9244ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@3c40bb23
+2017-08-15 18:35:06,417 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (9371ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@74071883
+2017-08-15 18:35:06,447 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (9401ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:35:06,521 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (9475ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}
+2017-08-15 18:36:41,885 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (5514ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@78370c18
+2017-08-15 18:36:42,497 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (6126ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@5b918f79
+2017-08-15 18:36:48,080 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (11709ms)] - servletRequest%%%%%%%%%%%%%%%java.util.Collections$2@2875500a
+2017-08-15 18:38:36,975 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (6860ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:38:37,292 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (7177ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:25,312 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (5083ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:26,377 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (6148ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:26,393 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (6164ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:29,133 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (8904ms)] - servletRequest%%%%%%%%%%%%%%%2
+2017-08-15 18:39:29,267 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (9038ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:39:29,524 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (9295ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=37.5, position='208室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=3}
+2017-08-15 18:39:29,699 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (9470ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:29,756 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (9527ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:29,758 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (9529ms)] - servletRequest%%%%%%%%%%%%%%%null
+2017-08-15 18:39:29,948 -[ERROR]  method:[beacool.filter.CommonFilter.doFilter(CommonFilter.java:21) (9719ms)] - servletRequest%%%%%%%%%%%%%%%1
+2017-08-15 18:39:29,982 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:59) (9753ms)] - 【findPatientList.do params】############################入参信息:PatientTempParam{sex=0, idCard='null', name='null', position='null', tempDic=0, hospitalization=0}
+2017-08-15 18:39:30,055 -[ERROR]  method:[beacool.service.impl.PatientTempServiceImpl.queryPatientListResult(PatientTempServiceImpl.java:80) (9826ms)] - 【result】###########################返回数据：{list=[PatientTemp{temp=39.2, position='207室', hospitalization=1}, PatientTemp{temp=37.5, position='208室', hospitalization=1}, PatientTemp{temp=37.2, position='201室', hospitalization=1}], total=3, message=请求成功, errorCode=0, totalPages=1}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="beacool.dao.PatientTempDao">
+    <!--<parameterMap id="parameterMap" type="beacool.entity.PatientTemp"></parameterMap>-->
+    <resultMap id="resultMap" type="beacool.entity.PatientTemp">
+        <result property="temp" column="temp" jdbcType="DOUBLE"/>
+        <result property="position" column="position" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="idCard" column="id_card" jdbcType="VARCHAR"/>
+        <result property="hospitalization" column="hospitalization" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="queryPatientListSql">
+        patient p,
+        (select a.temp, a.id_card from
+        (
+        select * from patient_temperature order by update_time DESC
+        ) a GROUP BY a.id_card
+        ) pt,
+        (select a.position, a.id_card from
+        (
+        select * from patient_position order by update_time DESC
+        ) a GROUP BY a.id_card
+        ) pp
+    </sql>
+    <select id="queryPatientList" parameterType="beacool.entity.base.BasePage" resultMap="resultMap">
+        select
+          p.id_card, p.sex, p.name, p.birthday, p.hospitalization, pt.temp, pp.position
+        from
+        <include refid="queryPatientListSql" />
+        <where>
+            p.id_card = pt.id_card and p.id_card = pp.id_card
+            <if test="idCard!=null and idCard != ''">
+                AND p.id_card=#{idCard,jdbcType=VARCHAR}
+            </if>
+            <if test="name!=null and name != ''">
+                AND p.name=#{name,jdbcType=VARCHAR}
+            </if>
+            <if test="position!=null and position != ''">
+                AND pp.position=#{position,jdbcType=VARCHAR}
+            </if>
+            <if test="hospitalization!=null and hospitalization != ''">
+                AND p.hospitalization=#{hospitalization,jdbcType=VARCHAR}
+            </if>
+            <choose>
+                <when test="tempDic==1">
+                    AND pt.temp &lt; 36
+                </when>
+                <when test="tempDic==2">
+                    AND pt.temp &gt;= 36
+                    AND pt.temp &lt;= 37
+                </when>
+                <when test="tempDic==3">
+                    AND pt.temp &gt;= 37
+                    AND pt.temp &lt;= 38
+                </when>
+                <when test="tempDic==4">
+                    AND pt.temp &gt;= 38
+                    AND pt.temp &lt;= 39
+                </when>
+                <when test="tempDic==5">
+                    AND pt.temp &gt; 39
+                </when>
+            </choose>
+            ORDER BY pt.temp DESC
+            <if test="pageSize != 0">
+                limit #{start}, #{pageSize}
+            </if>
+        </where>
+    </select>
+    <select id="queryPatientListTotal" parameterType="beacool.entity.base.BasePage" resultType="java.lang.Long">
+        select
+          COUNT(*)
+        from
+        <include refid="queryPatientListSql" />
+        <where>
+            p.id_card = pt.id_card and p.id_card = pp.id_card
+            <if test="idCard!=null and idCard != ''">
+                AND p.id_card=#{idCard,jdbcType=VARCHAR}
+            </if>
+            <if test="name!=null and name != ''">
+                AND p.name=#{name,jdbcType=VARCHAR}
+            </if>
+            <if test="position!=null and position != ''">
+                AND pp.position=#{position,jdbcType=VARCHAR}
+            </if>
+            <if test="hospitalization!=null and hospitalization != ''">
+                AND p.hospitalization=#{hospitalization,jdbcType=VARCHAR}
+            </if>
+            <choose>
+                <when test="tempDic==1">
+                    AND pt.temp &lt; 36
+                </when>
+                <when test="tempDic==2">
+                    AND pt.temp &gt;= 36
+                    AND pt.temp &lt; 37
+                </when>
+                <when test="tempDic==3">
+                    AND pt.temp &gt;= 37
+                    AND pt.temp &lt; 38
+                </when>
+                <when test="tempDic==4">
+                    AND pt.temp &gt;= 38
+                    AND pt.temp &lt; 39
+                </when>
+                <when test="tempDic==5">
+                    AND pt.temp &gt;= 39
+                </when>
+            </choose>
+            ORDER BY pt.temp DESC
+        </where>
+    </select>
+</mapper>
+

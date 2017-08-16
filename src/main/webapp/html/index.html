@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在院病历</title>
+    <link href="../style/base.css" rel="stylesheet" charset="UTF-8"/>
+    <link rel="stylesheet" href="../style/bootstrap.css?v=1.0.0" charset="UTF-8">
+    <link rel="stylesheet" href="../style/bootstrap-datepicker.css" charset="UTF-8">
+    <link rel="stylesheet" href="../style/bootstrap-datetimepicker.css" charset="UTF-8">
+    <link rel="stylesheet" href="../style/ui.chosen.css" charset="UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/ui.chosen.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js?v=1.0.0"></script>
+    <script type="text/javascript" src="../js/bootstrap-paginator.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="../js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="../js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../js/common.js?v=1.0.0"></script>
+</head>
+<body class="top">
+    <aside class="patient menus">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="searchName" placeholder="姓名/ID/病房号">
+                </div>
+                <div class="col-sm-4">
+                    <a type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> 搜索</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select id="" data-xtype="chosen" class="col-sm-12">
+                        <option value="">36度以下</option>
+                        <option value="">36~37度</option>
+                        <option value="">37~38度</option>
+                        <option value="">38~39度</option>
+                        <option value="">39度及以上</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select id="" data-xtype="chosen" class="col-sm-12">
+                        <option value="">体温排序</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <select id="" data-xtype="chosen" class="col-sm-12">
+                        <option value="">在院病人</option>
+                        <option value="">离院病人</option>
+                        <option value="">所有病人</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <ul class="patient-list">
+            <li class="on">
+                <a>
+                    <div class="patient-aside aside-left">
+                        <div class="aside"></div>
+                        <div class="aside2"></div>
+                        <div class="aside3"></div>
+                    </div>
+                    <div class="patient-info">
+                        <div class="pull-left name ellipsis">张三</div>
+                        <div class="pull-left card-id ellipsis">412826199111116610</div>
+                        <div class="pull-left temp ellipsis">36.5 <sup>o</sup><span>C</span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="patient-aside aside-right">
+                        <div class="aside3"></div>
+                        <div class="aside2"></div>
+                        <div class="aside"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="patient-aside aside-left">
+                        <div class="aside"></div>
+                        <div class="aside2"></div>
+                        <div class="aside3"></div>
+                    </div>
+                    <div class="patient-info">
+                        <div class="pull-left name ellipsis">张三</div>
+                        <div class="pull-left card-id ellipsis">412826199111116610</div>
+                        <div class="pull-left temp ellipsis temp-info">37.5 <sup>o</sup><span>C</span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="patient-aside aside-right">
+                        <div class="aside3"></div>
+                        <div class="aside2"></div>
+                        <div class="aside"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="patient-aside aside-left">
+                        <div class="aside"></div>
+                        <div class="aside2"></div>
+                        <div class="aside3"></div>
+                    </div>
+                    <div class="patient-info">
+                        <div class="pull-left name ellipsis">张三</div>
+                        <div class="pull-left card-id ellipsis">412826199111116610</div>
+                        <div class="pull-left temp temp-warning ellipsis">38.5 <sup>o</sup><span>C</span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="patient-aside aside-right">
+                        <div class="aside3"></div>
+                        <div class="aside2"></div>
+                        <div class="aside"></div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <div class="patient-aside aside-left">
+                        <div class="aside"></div>
+                        <div class="aside2"></div>
+                        <div class="aside3"></div>
+                    </div>
+                    <div class="patient-info">
+                        <div class="pull-left name ellipsis">张三</div>
+                        <div class="pull-left card-id ellipsis">412826199111116610</div>
+                        <div class="pull-left temp temp-danger ellipsis">39.5 <sup>o</sup><span>C</span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="patient-aside aside-right">
+                        <div class="aside3"></div>
+                        <div class="aside2"></div>
+                        <div class="aside"></div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!--<ul class="pager-box text-center">-->
+            <!--<ul class="pagination" id="pager">-->
+                <!--<li class="active"><a>1</a></li>-->
+                <!--<li><a>2</a></li>-->
+                <!--<li><a>3</a></li>-->
+            <!--</ul>-->
+        <!--</ul>-->
+        <a type="button" data-toggle="modal" data-target="#addPatientInfo" class="btn btn-primary btn-block" style="border:0;border-radius:0;position: fixed;bottom:0;z-index: 100;width: 390px;">录入</a>
+    </aside>
+    <div style="position: absolute;top: 0;left: 390px;right: 0;bottom: 0;overflow: hidden;">
+        <iframe src="../html/detail.html" frameborder="0" style="width: 100%;height: 100%;overflow:hidden;border: none; outline: hidden;">
+
+        </iframe>
+    </div>
+
+<!-- 录入病人信息 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addPatientInfo">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">录入信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label">姓名：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label">ID：</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="" placeholder="ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label">体温：</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="" placeholder="体温">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label">性别：</label>
+                            <div class="col-sm-8">
+                                <select id="" data-xtype="chosen" class="col-sm-12" style="width:368px;">
+                                    <option value="">男</option>
+                                    <option value="">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-4 control-label">年龄：</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="" placeholder="年龄">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">录入</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--报错提示信息模态框-->
+    <div class="modal fade" id="dialog-error" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">提示信息</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-primary cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>-->
+                    <a type="button" class="btn btn-primary ok" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> 确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../html/index.js?v=1.0.0"></script>
+</body>
+</html>
