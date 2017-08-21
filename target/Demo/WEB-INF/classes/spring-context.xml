@@ -5,13 +5,13 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
         http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
-        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
        default-lazy-init="true">
 
     <description>Spring Configuration</description>
@@ -28,8 +28,7 @@
     <!--<context:component-scan base-package="com.vitelon.v"/>-->
 
     <!--引入属性文件 -->
-    <context:property-placeholder location="classpath:dbconfig.properties" />
-
+    <context:property-placeholder location="classpath:dbconfig.properties,classpath:redis.properties" />
 
     <!-- dataSource 配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -84,6 +83,73 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
+    <!--<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath:rsa.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">-->
+        <!--<property name="properties" ref="configProperties" />-->
+    <!--</bean>-->
+
+    <!-- 配置redis 单机版 -->
+    <!-- redis数据源 -->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!-- 最大空闲数 -->
+        <property name="maxIdle" value="${redis.maxIdle}" />
+        <!-- 最大活跃数 -->
+        <property name="maxTotal" value="${redis.maxActive}" />
+        <!-- 最大等待时间 -->
+        <property name="maxWaitMillis" value="${redis.maxWait}" />
+        <!-- 返回连接时，检测连接是否成功 -->
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+    </bean>
+    <!-- Spring-redis连接池管理工厂 -->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <!-- IP地址 -->
+        <property name="hostName" value="${redis.host}" />
+        <!-- 密码 -->
+        <property name="password" value="${redis.password}" />
+        <!-- 端口号 -->
+        <property name="port" value="${redis.port}" />
+        <!-- 超时时间 -->
+        <property name="timeout" value="${redis.database}" />
+        <property name="poolConfig" ref="poolConfig" />
+    </bean>
+
+    <!-- redis模板类，提供了对缓存的增删改查 -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+        </property>
+    </bean>
+    <!-- StrRedisTemplate -->
+    <bean id="strRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+    </bean>
+    <!-- 使用中间类解决RedisCache.jedisConnectionFactory的静态注入，从而使MyBatis实现第三方缓存 -->
+    <!--<bean id="redisCacheTransfer" class="sysone.zr.com.utils.RedisCacheTransfer">-->
+        <!--<property name="jedisConnectionFactory" ref="jedisConnectionFactory"/>-->
+    <!--</bean>-->
+    <!-- Redis缓存管理对象 -->
+    <bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">
+        <constructor-arg index="0" ref="redisTemplate" />
+    </bean>
 
     <!-- 事务管理 通知 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -98,11 +164,12 @@
             <tx:method name="remove*" propagation="REQUIRED" rollback-for="java.lang.Throwable" read-only="false"/>
             <!-- find,get,select,count开头的方法,开启只读,提高数据库访问性能 -->
             <tx:method name="find*" read-only="true" />
+            <tx:method name="query*" read-only="true" />
             <tx:method name="get*" read-only="true" />
             <tx:method name="select*" read-only="true" />
             <tx:method name="count*" read-only="true" />
-            <!-- 对其他方法 使用默认的事务管理 -->
-            <tx:method name="*" />
+            <!-- 其它的所有方法支持事务设置的属性（异常回滚） -->
+            <tx:method name="*" rollback-for="java.lang.Throwing" />
         </tx:attributes>
     </tx:advice>
 

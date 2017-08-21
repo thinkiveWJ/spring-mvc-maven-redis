@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="beacool.dao.LoginDao">
+    <!--<parameterMap id="parameterMap" type="beacool.entity.PatientTemp"></parameterMap>-->
+    <resultMap id="resultMap" type="beacool.entity.Login">
+        <result property="userName" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="queryLogin" parameterType="beacool.entity.Login" resultMap="resultMap">
+        select
+          id, name
+        from
+        user_register u
+        WHERE 1 = 1
+        AND u.name = #{userName}
+        AND u.password = #{password}
+    </select>
+</mapper>
+

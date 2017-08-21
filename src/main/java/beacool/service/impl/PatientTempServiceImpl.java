@@ -1,17 +1,15 @@
 package beacool.service.impl;
 
 import beacool.dao.PatientTempDao;
-import beacool.entity.ErrorException;
-import beacool.entity.Patient;
 import beacool.entity.PatientTemp;
-import beacool.entity.base.BasePage;
 import beacool.param.PatientTempParam;
+import beacool.service.error.ErrorExceptionService;
 import beacool.service.PatientTempService;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,10 +17,12 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/8/1.
  */
-@Service("PatientTempService")
+@Service
 public class PatientTempServiceImpl implements PatientTempService {
     private Logger logger = Logger.getLogger(PatientTempServiceImpl.class);
-    @Resource(name = "patientTempDao")
+
+
+    @Autowired
     private PatientTempDao patientTempDao;
 
     /**
@@ -49,6 +49,7 @@ public class PatientTempServiceImpl implements PatientTempService {
      * @return
      */
     public Map<String, Object> queryPatientListResult(PatientTempParam patientTempParam){
+        ErrorExceptionService errorExceptionService = new ErrorExceptionService();
         Map<String, Object> map = new HashedMap();
         int pageNum = patientTempParam.getPageNum();
         int pageSize = patientTempParam.getPageSize();
@@ -60,14 +61,12 @@ public class PatientTempServiceImpl implements PatientTempService {
         List<PatientTemp> patientTemps = new ArrayList<PatientTemp>();
         long total = 0L;
         long totalPage = 0L;
-        ErrorException ee = new ErrorException();
         try {
             patientTemps = queryPatientList(patientTempParam);
             total = queryPatientListTotal(patientTempParam);
         }catch (Exception e){
             logger.error("【Exception】========异常信息:"+e);
-            ee.setErrorCode(-1);
-            ee.setMsg("数据库处理错误");
+            errorExceptionService.setErrorCode(1003);
         }
         int index = (int)total%pageSize;
         totalPage = total/pageSize;
@@ -75,8 +74,8 @@ public class PatientTempServiceImpl implements PatientTempService {
         map.put("list", patientTemps);
         map.put("total", total);
         map.put("totalPages", totalPage);
-        map.put("errorCode", ee.getErrorCode());
-        map.put("message", ee.getMsg());
+        map.put("errorCode", errorExceptionService.getErrorCode());
+        map.put("message", errorExceptionService.getMsg());
         logger.error("【result】###########################返回数据："+ map);
         return map;
     }

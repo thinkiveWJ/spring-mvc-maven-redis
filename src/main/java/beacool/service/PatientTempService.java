@@ -1,8 +1,6 @@
 package beacool.service;
 
-import beacool.entity.Patient;
 import beacool.entity.PatientTemp;
-import beacool.entity.base.BasePage;
 import beacool.param.PatientTempParam;
 
 import java.util.List;

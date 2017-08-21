@@ -55,7 +55,7 @@ window.$(document).ajaxStop(function() {
  * @param callback  回调函数
  */
 window.POST = function(url, data, callback){
-    // var token= sessionStorage.getItem("token");
+    var token= sessionStorage.getItem("token");
     window.$.ajax({
         url: url,
         data: data,
@@ -63,7 +63,7 @@ window.POST = function(url, data, callback){
         timeout: "60000",
         dataType: "json",
         headers: {
-            token: "123"
+            token: token
         },
         // contentType: "application/json;charset=UTF-8",
         success: function(result){

@@ -19,8 +19,17 @@
         <property name="defaultLocale" value="zh_CN" />
     </bean>
 
+    <!-- 自定义拦截器 -->
     <mvc:interceptors>
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+        <!--<mvc:interceptor>-->
+            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->
+            <!--<mvc:mapping path="/**" />-->
+            <!--<mvc:mapping path="/user/**" />-->
+            <!--<mvc:mapping path="/test/**" />-->
+            <bean class="beacool.interceptor.SpringMVCInterceptor"></bean>
+        <!--</mvc:interceptor>-->
+        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
     </mvc:interceptors>
 
     <!-- 支持返回json(避免IE在ajax请求时，返回json出现下载文件 ) -->
@@ -61,6 +70,7 @@
 
     <!-- Bean解析器,级别高于默认解析器,寻找bean对象进行二次处理 -->
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
+
 
     <!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
     <mvc:default-servlet-handler />

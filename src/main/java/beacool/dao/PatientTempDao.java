@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/8/1.
  */
-@Repository("patientTempDao")
+@Repository
 public interface PatientTempDao {
     List<PatientTemp> queryPatientList(PatientTempParam patientTempParam);
     long queryPatientListTotal(PatientTempParam patientTempParam);

@@ -23,8 +23,8 @@
 
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/</url-pattern>
-        <!--<url-pattern>*.do</url-pattern>-->
+        <!--<url-pattern>/</url-pattern>-->
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
     <!-- Spring配置 -->
@@ -57,12 +57,13 @@
     </filter-mapping>
 
     <filter>
-    <!-- Filter的名字 --><filter-name>log</filter-name>
-    <!-- Filter的实现类 --><filter-class>beacool.filter.CommonFilter</filter-class>
+        <filter-name>log</filter-name><!-- Filter的名字 -->
+        <filter-class>beacool.filter.CommonFilter</filter-class><!-- Filter的实现类 -->
     </filter>
     <filter-mapping><!-- 定义Filter拦截的URL地址 -->
-    <!-- Filter的名字 --><filter-name>log</filter-name>
-    <!-- Filter负责拦截的URL 全部以/的请求,如果<url-pattern>/*.action
-     </>,将会以拦截*.action的请求--><url-pattern>/*</url-pattern>
-</filter-mapping>
+        <filter-name>log</filter-name><!-- Filter的名字 -->
+        <url-pattern>/*</url-pattern><!-- Filter负责拦截的URL 全部以/的请求,如果<url-pattern>/*.action</>,将会以拦截*.action的请求-->
+    </filter-mapping>
+
+
 </web-app>

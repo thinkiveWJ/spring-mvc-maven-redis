@@ -16,6 +16,8 @@
     <script type="text/javascript" src="./js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script type="text/javascript" src="./js/highcharts.js"></script>
     <script type="text/javascript" src="./js/ui.chosen.js"></script>
+    <script type="text/javascript" src="./js/jsEncrypt.js"></script>
+    <script type="text/javascript" src="./js/security.js"></script>
     <!--[if lt IE 9]>
     <script src="./js/html5shiv.min.js?v=2.2.0"></script>
     <script src="./js/respond.min.js?v=2.2.0"></script>
@@ -32,33 +34,18 @@
 </form>
 <script>
     function login() {
-        POST("/spring/patient/findPatientList.do", {pageNum: 2, pageSize: 1}, function (result) {
-            location.href='/spring/Test/returnSuccess';
+        POST("/spring/RSA/getRSAPublicKey.do", {userName: "admin", password: "123"}, function (result) {
+//            location.href='/spring/Test/returnSuccess';
+            var data = result['data'];
+            var modulus = data['modulus'], exponent = data['exponent'];
+            var publicKey = RSAUtils.getKeyPair(exponent, '', modulus);
+            var password = RSAUtils.encryptedString(publicKey, '123');
+            POST("/spring/login/queryLogin.do",{userName: "admin",password: password}, function (result) {
+            });
         });
     }
-    var arr = [
-            {"Id":2,"Pid":0,"Resource":"","Operator":"","Description":"开机泡泡",
-                "children":
-                        [{"Id":4,"Pid":2,"Resource":"http://www","Operator":"access","Description":"开机常规设置","title":"开机常规设置","checked":true},
-                            {"Id":5,"Pid":2,"Resource":"button1","Operator":"disable","Description":"button1不可显示","title":"button1不可显示","checked":true}
-                            ],
-                "title":"开机泡泡","checked":true,"nodeKey":2},
-        {"Id":4,"Pid":2,"Resource":"http://www","Operator":"access","Description":"开机常规设置","title":"开机常规设置","checked":true},
-        {"Id":5,"Pid":2,"Resource":"button1","Operator":"disable","Description":"button1不可显示","title":"button1不可显示","checked":true}];
-    var str = "";
-    str = getStr(arr,str);
-    function getStr(arr,str) {
-        for(var i = 0; i < arr.length; i ++){
-            if(arr[i]['children'] && arr[i]['children'].length > 0){
-                var arr2 = arr[i]['children'];
-                str += getStr(arr2, str);
-            }else{
-                str += arr[i]['Id'] + ",";
-            }
-        }
-        return str;
-    }
-    str = str.substring(0, str.length-1);
+
+
 </script>
 </body>
 </html>
