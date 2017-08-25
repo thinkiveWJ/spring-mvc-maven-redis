@@ -1,9 +1,11 @@
 package beacool.dao;
 
+import beacool.entity.Patient;
 import beacool.entity.PatientTemp;
 import beacool.entity.base.BasePage;
 import beacool.param.PatientTempParam;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -16,4 +18,13 @@ public interface PatientTempDao {
     List<PatientTemp> queryPatientList(PatientTempParam patientTempParam);
     long queryPatientListTotal(PatientTempParam patientTempParam);
     Map<String,Object> queryPatientListResult(PatientTempParam patientTempParam);
+
+    //添加病人体温信息
+    void addPatientTemp(PatientTemp patientTemp);
+    //添加病人信息
+    void addPatient(PatientTemp patientTemp);
+    //添加病人位置信息
+    void addPatientPosition(PatientTemp patientTemp);
+
+    Map<String, Object> addPatientInfo(PatientTemp patientTemp);
 }

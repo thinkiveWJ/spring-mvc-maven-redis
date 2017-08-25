@@ -38,7 +38,7 @@ public class LoginServiceImpl implements LoginService {
         Map<String, Object> map = new HashedMap();
         String userName = login.getUserName();
         String password = login.getPassword();
-        logger.error("【login.do params】############################入参信息:" + login);
+        logger.error("【login.do】############################入参：" + login);
         if (userName == null || userName.isEmpty()) {
             map.put("errorCode", -1);
             map.put("msg", "用户名不能为空！");
@@ -55,7 +55,10 @@ public class LoginServiceImpl implements LoginService {
         } catch (Exception e) {
             errorExceptionService.setErrorCode(-1);
             errorExceptionService.setMsg("md5加密失败");
-            logger.error("【Exception】========异常信息:"+ e);
+            logger.error("【login.do】========异常信息:"+ e);
+            map.put("errorCode", errorExceptionService.getErrorCode());
+            map.put("msg", errorExceptionService.getMsg());
+            return map;
         }
         login.setPassword(password);
 
@@ -72,16 +75,17 @@ public class LoginServiceImpl implements LoginService {
             }
         }catch (Exception e){
             errorExceptionService.setErrorCode(1003);
-            logger.error("【Exception】========异常信息:"+ e);
+            logger.error("【login.do】========异常信息:"+ e);
+        }finally {
+            for(Login item: list){
+                item.setToken(login.getToken());
+                map.put("data", item);
+            }
+            map.put("errorCode", errorExceptionService.getErrorCode());
+            map.put("msg", errorExceptionService.getMsg());
+            logger.error("【login.do】###########################出参：" + map);
+            return map;
         }
-        for(Login item: list){
-            item.setToken(login.getToken());
-            map.put("data", item);
-        }
-        map.put("errorCode", errorExceptionService.getErrorCode());
-        map.put("msg", errorExceptionService.getMsg());
-        logger.error("【login.do result】###########################返回数据：" + map);
-        return map;
     }
 }
 

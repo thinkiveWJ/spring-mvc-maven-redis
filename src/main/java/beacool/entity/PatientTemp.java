@@ -7,9 +7,14 @@ public class PatientTemp extends Patient{
     private double temp;
     private String position;
     private int hospitalization;
+    private String updateTime;
 
-    public double getTemp() {
-        return temp;
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -18,7 +23,12 @@ public class PatientTemp extends Patient{
                 "temp=" + temp +
                 ", position='" + position + '\'' +
                 ", hospitalization=" + hospitalization +
+                ", updateTime='" + updateTime + '\'' +
                 '}';
+    }
+
+    public double getTemp() {
+        return temp;
     }
 
     @Override

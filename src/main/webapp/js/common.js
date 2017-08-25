@@ -74,8 +74,11 @@ window.POST = function(url, data, callback){
                     window.top.$("#dialog-error .modal-body").html(result["msg"]);
                     window.top.$("#dialog-error").modal();
                 }else{
-                    $(".modal.fade.in .modal-body").append("<div class='form-display error-info'>"+result["msg"]+"</div>");
-                    window.top.$(".modal.fade.in .modal-body").append("<div class='form-display error-info'>"+result["msg"]+"</div>");
+                    if($(".modal.fade.in .modal-body").parents().hasClass("top")){
+                        window.top.$(".modal.fade.in .modal-body").append("<div class='form-display error-info'>"+result["msg"]+"</div>");
+                    }else{
+                        $(".modal.fade.in .modal-body").append("<div class='form-display error-info'>"+result["msg"]+"</div>");
+                    }
                 }
                 return;
             }
@@ -83,6 +86,21 @@ window.POST = function(url, data, callback){
             typeof(callback) == "function" && callback(result);
         }
     }).fail(function(err,xhr){
+        var msg = err['responseText'];
+        if(msg.indexOf("errorCode: 1001") > 0 || msg.indexOf("errorCode: 1002") > 0){
+            return window.top.location.href = "/spring/login.html?v=1.0.0"
+        }
+        if((window.top.$(".modal.fade.in").length == 0 && $(".modal.fade.in").length == 0)){
+            window.top.$("#dialog-error .modal-title").html("报错信息");
+            window.top.$("#dialog-error .modal-body").html(msg);
+            window.top.$("#dialog-error").modal();
+        }else{
+            if($(".modal.fade.in .modal-body").parents().hasClass("top")){
+                window.top.$(".modal.fade.in .modal-body").append("<div class='form-display error-info'>"+msg+"</div>");
+            }else{
+                $(".modal.fade.in .modal-body").append("<div class='form-display error-info'>"+msg+"</div>");
+            }
+        }
         // if(err){
         //     var responseText = err.responseText;
         //     if(responseText == "{result=100, data=null, message=token失效}"){
@@ -95,3 +113,12 @@ window.POST = function(url, data, callback){
         // });
     });
 };
+/**
+ * 展示错误信息
+ * @param info
+ * @param $el
+ */
+function fillErrorDetails(info, $el) {
+    var str = '<div class="form-display error-info">'+ info +'</div>';
+    $(str).appendTo($el);
+}

@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
 
@@ -94,7 +94,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>4.0.9.RELEASE</version>
+      <version>4.1.9.RELEASE</version>
     </dependency>
 
     <dependency>
@@ -343,7 +343,6 @@
       <version>${spring.data.redis.version}</version>
     </dependency>
     <!-- redis缓存服务end -->
-
     <!-- RSA start -->
     <dependency>
       <groupId>org.bouncycastle</groupId>

@@ -26,21 +26,27 @@ import java.util.Map;
 public class GetRSAPublicKey {
     private Logger logger = Logger.getLogger(LoginController.class);
 
-    @Autowired
-    private RedisCacheService redisCacheService;
-
-
     @RequestMapping(value = "getRSAPublicKey.do", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> getRSAPublicKey(Login login, HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/plain;charse=UTF-8");
+        logger.error("【getRSAPublicKey.do】###########################入参：" + login);
         ErrorExceptionService errorExceptionService = new ErrorExceptionService();
         Map<String, Object> map = new HashedMap();
         String username  = login.getUserName();
-        PublicKeyUtil publicKeyMap = RSAUtil.getInstance(username).getPublicKeyUtil(true);
+        PublicKeyUtil publicKeyMap = new PublicKeyUtil();
+        if(username == null || username.isEmpty()){
+            map.put("data", publicKeyMap);
+            map.put("errorCode", -1);
+            map.put("msg", "获取秘钥对失败");
+            logger.error("【getRSAPublicKey.do】###########################出参：" + map);
+            return map;
+        }
+        publicKeyMap = RSAUtil.getInstance(username).getPublicKeyUtil(true);
         map.put("data", publicKeyMap);
         map.put("errorCode", errorExceptionService.getErrorCode());
         map.put("msg", errorExceptionService.getMsg());
+        logger.error("【getRSAPublicKey.do】###########################出参：" + map);
         return map;
     }
 }

@@ -1,31 +1,10 @@
-var findPatientListUrl = "/spring/patient/findPatientList.do";
+var findPatientListUrl = "/spring/patient/findPatientList.do",
+    addPatientInfoUrl = "/spring/patient/addPatientInfo.do";
 $(function () {
     //获取病人信息列表
     queryList();
-
-    var arr = [
-        {"Id":2,"Pid":0,"Resource":"","Operator":"","Description":"开机泡泡",
-            "children":
-                [{"Id":4,"Pid":2,"Resource":"http://www","Operator":"access","Description":"开机常规设置","title":"开机常规设置","checked":true},
-                    {"Id":5,"Pid":2,"Resource":"button1","Operator":"disable","Description":"button1不可显示","title":"button1不可显示","checked":true}
-                ],
-            "title":"开机泡泡","checked":true,"nodeKey":2},
-        {"Id":4,"Pid":2,"Resource":"http://www","Operator":"access","Description":"开机常规设置","title":"开机常规设置","checked":true},
-        {"Id":5,"Pid":2,"Resource":"button1","Operator":"disable","Description":"button1不可显示","title":"button1不可显示","checked":true}];
-    var str = "";
-    str = getStr(arr,str);
-    function getStr(arr,str) {
-        for(var i = 0; i < arr.length; i ++){
-            if(arr[i]['children'] && arr[i]['children'].length > 0){
-                var arr2 = arr[i]['children'];
-                str += getStr(arr2, str);
-            }else{
-                str += arr[i]['Id'] + ",";
-            }
-        }
-        return str;
-    }
-    str = str.substring(0, str.length-1);
+    //点击按钮
+    bindBTN();
 });
 /**
  * 获取病人信息列表
@@ -45,4 +24,64 @@ function queryList() {
  */
 function getData(data) {
     return data;
+}
+/**
+ * 点击按钮
+ */
+function bindBTN() {
+    //点击录入新增
+    $("#addBTN").click(function () {
+        clearAddPanel();
+        $("#addPatientInfo").modal();
+    });
+    //点击录入
+    $("#addPatientInfo .ok").unbind("click").bind("click", function () {
+        $("#addPatientInfo .error-info").remove();
+        var name = $("#addName").val(),
+            idCard = $("#addIdCard").val(),
+            temp = $("#addTemp").val(),
+            sex = $("#addSex").data("chosen").selectedItem(),
+            position = $('#addPosition').val();
+        sex = sex ? sex['value'] : 0;
+        // if(!name){
+        //     fillErrorDetails("请输入姓名！", $("#addPatientInfo .modal-body"));
+        //     return;
+        // }
+        // if(!idCard){
+        //     fillErrorDetails("请输入身份证！", $("#addPatientInfo .modal-body"));
+        //     return;
+        // }
+        // if(!temp){
+        //     fillErrorDetails("请输入体温！", $("#addPatientInfo .modal-body"));
+        //     return;
+        // }
+        // if(!(temp > 36 && temp < 43)){
+        //     fillErrorDetails("请输入正确的体温！", $("#addPatientInfo .modal-body"));
+        //     return;
+        // }
+        // if(!position){
+        //     fillErrorDetails("请输入病房号！", $("#addPatientInfo .modal-body"));
+        //     return;
+        // }
+        var data = {
+            name: "wj",
+            idCard: "123456789012345",
+            temp: "37",
+            sex: "1",
+            position: "123"
+        };
+        POST(addPatientInfoUrl, data, function (result) {
+
+        })
+    });
+}
+/**
+ * 清除输入面板
+ */
+function clearAddPanel() {
+    $("#addPatientInfo .error-info").remove();
+    $("#addPatientInfo input").val("");
+    $("#addPatientInfo select[data-xtype='chosen']").each(function () {
+        $(this).data("chosen").selectedItem("");
+    });
 }

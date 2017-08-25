@@ -1,7 +1,9 @@
 package beacool.service;
 
+
 import beacool.entity.PatientTemp;
 import beacool.param.PatientTempParam;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -29,5 +31,12 @@ public interface PatientTempService {
      * @return
      */
     public Map<String, Object> queryPatientListResult(PatientTempParam patientTempParam);
+
+    /**
+     * 添加病人
+     * @param patientTemp
+     * @return
+     */
+    public Map<String, Object> addPatientInfo(PatientTemp patientTemp);
 
 }

@@ -152,7 +152,7 @@
                 <!--<li><a>3</a></li>-->
             <!--</ul>-->
         <!--</ul>-->
-        <a type="button" data-toggle="modal" data-target="#addPatientInfo" class="btn btn-primary btn-block" style="border:0;border-radius:0;position: fixed;bottom:0;z-index: 100;width: 390px;">录入</a>
+        <a type="button" id="addBTN" class="btn btn-primary btn-block" style="border:0;border-radius:0;position: fixed;bottom:0;z-index: 100;width: 390px;">录入</a>
     </aside>
     <div style="position: absolute;top: 0;left: 390px;right: 0;bottom: 0;overflow: hidden;">
         <iframe src="../html/detail.html" frameborder="0" style="width: 100%;height: 100%;overflow:hidden;border: none; outline: hidden;">
@@ -173,41 +173,41 @@
                         <div class="form-group">
                             <label for="" class="col-sm-4 control-label">姓名：</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="姓名">
+                                <input type="text" class="form-control" id="addName" placeholder="姓名">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-4 control-label">ID：</label>
+                            <label for="" class="col-sm-4 control-label">身份证：</label>
                             <div class="col-sm-8">
-                                <input type="password" class="form-control" id="" placeholder="ID">
+                                <input type="text" class="form-control" id="addIdCard" placeholder="身份证">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-sm-4 control-label">体温：</label>
                             <div class="col-sm-8">
-                                <input type="password" class="form-control" id="" placeholder="体温">
+                                <input type="text" class="form-control" id="addTemp" placeholder="体温">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-sm-4 control-label">性别：</label>
                             <div class="col-sm-8">
-                                <select id="" data-xtype="chosen" class="col-sm-12" style="width:368px;">
+                                <select id="addSex" data-xtype="chosen" class="col-sm-12" style="width:368px;">
                                     <option value="">男</option>
                                     <option value="">女</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-4 control-label">年龄：</label>
+                            <label for="" class="col-sm-4 control-label">病房号：</label>
                             <div class="col-sm-8">
-                                <input type="password" class="form-control" id="" placeholder="年龄">
+                                <input type="text" class="form-control" id="addPosition" placeholder="病房号">
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">录入</button>
+                    <a type="button" class="btn btn-primary ok">录入</a>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

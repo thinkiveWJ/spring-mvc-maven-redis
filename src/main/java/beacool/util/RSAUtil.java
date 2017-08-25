@@ -37,7 +37,7 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 /**
  * RSA算法加密/解密工具类。
  * 
- * @author YangJing 11154
+ * @author
  * @version 1.0.1, 2015-06-06
  */
 public class RSAUtil {
@@ -160,6 +160,7 @@ public class RSAUtil {
         ObjectInputStream ois = null;
         try {
             fis = FileUtils.openInputStream(rsaPairFile);
+
             ois = new ObjectInputStream(fis);
             oneKeyPair = (KeyPair) ois.readObject();
             return oneKeyPair;

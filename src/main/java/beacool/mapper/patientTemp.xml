@@ -9,6 +9,8 @@
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="idCard" column="id_card" jdbcType="VARCHAR"/>
         <result property="hospitalization" column="hospitalization" jdbcType="INTEGER"/>
+        <result property="sex" column="sex" jdbcType="INTEGER"/>
+        <result property="updateTime" column="update_time" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="queryPatientListSql">
         patient p,
@@ -23,7 +25,7 @@
         ) a GROUP BY a.id_card
         ) pp
     </sql>
-    <select id="queryPatientList" parameterType="beacool.entity.base.BasePage" resultMap="resultMap">
+    <select id="queryPatientList" parameterType="beacool.param.PatientTempParam" resultMap="resultMap">
         select
           p.id_card, p.sex, p.name, p.birthday, p.hospitalization, pt.temp, pp.position
         from
@@ -68,7 +70,7 @@
             </if>
         </where>
     </select>
-    <select id="queryPatientListTotal" parameterType="beacool.entity.base.BasePage" resultType="java.lang.Long">
+    <select id="queryPatientListTotal" parameterType="beacool.param.PatientTempParam" resultType="java.lang.Long">
         select
           COUNT(*)
         from
@@ -110,5 +112,21 @@
             ORDER BY pt.temp DESC
         </where>
     </select>
+
+    <insert id="addPatientTemp" parameterType="beacool.entity.PatientTemp">
+      INSERT INTO  patient_temperature ( id_card, temp, update_time)
+                       VALUES
+                       ( #{idCard}, #{temp},#{updateTime} );
+    </insert>
+    <insert id="addPatient" parameterType="beacool.entity.PatientTemp">
+        INSERT INTO  patient (id_card, sex, birthday, name, update_time, hospitalization)
+                       VALUES
+                       ( #{idCard}, #{sex}, #{birthday}, #{name}, #{updateTime}, #{hospitalization} );
+    </insert>
+    <insert id="addPatientPosition" parameterType="beacool.entity.PatientTemp">
+        INSERT INTO  patient_position ( id_card, position, update_time)
+        VALUES
+        ( #{idCard}, #{position},#{updateTime} );
+    </insert>
 </mapper>
 

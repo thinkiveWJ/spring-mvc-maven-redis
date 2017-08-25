@@ -20,18 +20,17 @@
     <context:annotation-config/>
 
     <!-- 开启组件自动扫描；使用Annotation自动注册Bean，解决事物失效问题：在主容器中不扫描@Controller注解，在SpringMvc中只扫描@Controller注解。  -->
-    <context:component-scan base-package="beacool"><!-- base-package 如果多个，用“,”分隔 -->
+    <context:component-scan base-package="beacool.*"><!-- base-package 如果多个，用“,”分隔 -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!--<!– 自动扫描 –>-->
-    <!--<context:component-scan base-package="com.vitelon.v"/>-->
+
 
     <!--引入属性文件 -->
     <context:property-placeholder location="classpath:dbconfig.properties,classpath:redis.properties" />
 
     <!-- dataSource 配置数据源 -->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 
         <!-- 基本属性 url、User、password -->
         <property name="url" value="${jdbc.url}" />
@@ -39,30 +38,30 @@
         <property name="password" value="${jdbc.password}" />
 
         <!-- 配置初始化大小、最小、最大 -->
-        <property name="initialSize" value="1" />
-        <property name="minIdle" value="1" />
-        <property name="maxActive" value="20" />
+        <!--<property name="initialSize" value="1" />-->
+        <!--<property name="minIdle" value="1" />-->
+        <!--<property name="maxActive" value="20" />-->
 
-        <!-- 配置获取连接等待超时的时间 -->
-        <property name="maxWait" value="60000" />
+        <!--&lt;!&ndash; 配置获取连接等待超时的时间 &ndash;&gt;-->
+        <!--<property name="maxWait" value="60000" />-->
 
-        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
-        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <!--&lt;!&ndash; 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 &ndash;&gt;-->
+        <!--<property name="timeBetweenEvictionRunsMillis" value="60000" />-->
 
-        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
-        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <!--&lt;!&ndash; 配置一个连接在池中最小生存的时间，单位是毫秒 &ndash;&gt;-->
+        <!--<property name="minEvictableIdleTimeMillis" value="300000" />-->
 
-        <property name="validationQuery" value="SELECT 'x'" />
-        <property name="testWhileIdle" value="true" />
-        <property name="testOnBorrow" value="false" />
-        <property name="testOnReturn" value="false" />
+        <!--<property name="validationQuery" value="SELECT 'x'" />-->
+        <!--<property name="testWhileIdle" value="true" />-->
+        <!--<property name="testOnBorrow" value="false" />-->
+        <!--<property name="testOnReturn" value="false" />-->
 
-        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
-        <property name="poolPreparedStatements" value="false" />
-        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        <!--&lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 &ndash;&gt;-->
+        <!--<property name="poolPreparedStatements" value="false" />-->
+        <!--<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />-->
 
-        <!-- 配置监控统计拦截的filters -->
-        <property name="filters" value="stat" />
+        <!--&lt;!&ndash; 配置监控统计拦截的filters &ndash;&gt;-->
+        <!--<property name="filters" value="stat" />-->
     </bean>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
@@ -83,16 +82,6 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
-    <!--<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
-        <!--<property name="locations">-->
-            <!--<list>-->
-                <!--<value>classpath:rsa.properties</value>-->
-            <!--</list>-->
-        <!--</property>-->
-    <!--</bean>-->
-    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">-->
-        <!--<property name="properties" ref="configProperties" />-->
-    <!--</bean>-->
 
     <!-- 配置redis 单机版 -->
     <!-- redis数据源 -->
@@ -175,12 +164,14 @@
 
     <!-- 事务 aop 配置 -->
     <aop:config>
-        <aop:pointcut id="serviceMethods" expression="execution(public * beacool.service..*(..))" />
+        <!--其中第一个*代表返回值，第二*代表service下子包，第三个*代表方法名，“（..）”代表方法参数。-->
+        <aop:pointcut id="serviceMethods" expression="execution(* beacool.service.*.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
     </aop:config>
 
     <!-- 配置使Spring采用CGLIB代理 --><!-- 开启基于@AspectJ切面的注解处理器 -->
     <aop:aspectj-autoproxy proxy-target-class="true" />
+
 
     <!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务  -->
     <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
