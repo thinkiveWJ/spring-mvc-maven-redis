@@ -19,6 +19,9 @@ public interface PatientTempDao {
     long queryPatientListTotal(PatientTempParam patientTempParam);
     Map<String,Object> queryPatientListResult(PatientTempParam patientTempParam);
 
+
+    //查询是否已存在病人信息
+    List<PatientTemp> queryPatientExit(PatientTemp patientTemp);
     //添加病人体温信息
     void addPatientTemp(PatientTemp patientTemp);
     //添加病人信息

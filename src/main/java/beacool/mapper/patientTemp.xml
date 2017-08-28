@@ -113,6 +113,14 @@
         </where>
     </select>
 
+
+    <select id="queryPatientExit" parameterType="beacool.entity.PatientTemp" resultMap="resultMap">
+      select id_card  from patient p
+      WHERE  1 = 1
+      <if test="idCard !=null and idCard != ''">
+          AND p.id_card=#{idCard,jdbcType=VARCHAR}
+      </if>
+    </select>
     <insert id="addPatientTemp" parameterType="beacool.entity.PatientTemp">
       INSERT INTO  patient_temperature ( id_card, temp, update_time)
                        VALUES

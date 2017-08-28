@@ -3,6 +3,7 @@ package beacool.controller;
 import beacool.entity.PatientTemp;
 import beacool.param.PatientTempParam;
 import beacool.service.PatientTempService;
+import beacool.service.error.ErrorExceptionService;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,17 @@ public class PatientController {
     @ResponseBody
     public Map<String, Object> addPatientInfo(PatientTemp patientTemp, HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/plain;charse=UTF-8");
-        return patientTempService.addPatientInfo(patientTemp);
+        ErrorExceptionService errorExceptionService = new ErrorExceptionService();
+        Map<String, Object> map = new HashedMap();
+        try{
+             map = patientTempService.addPatientInfo(patientTemp);
+        }catch (Exception e){
+            errorExceptionService.setErrorCode(1003);
+            map.put("errorCode", errorExceptionService.getErrorCode());
+            map.put("msg", errorExceptionService.getMsg());
+            logger.error("【addPatientTemp.do】###########################异常："+ e);
+        }
+        logger.error("【addPatientTemp.do】###########################出参："+ map);
+        return map;
     }
 }

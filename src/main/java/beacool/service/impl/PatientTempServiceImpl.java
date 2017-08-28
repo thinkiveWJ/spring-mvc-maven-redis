@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -93,7 +94,6 @@ public class PatientTempServiceImpl implements PatientTempService {
     @Override
     public Map<String, Object> addPatientInfo(PatientTemp patientTemp){
         logger.error("【addPatientTemp.do】############################入参："+patientTemp);
-        ErrorExceptionService errorExceptionService = new ErrorExceptionService();
         Map<String, Object> map = new HashedMap();
 
         //获取当前时间
@@ -135,17 +135,21 @@ public class PatientTempServiceImpl implements PatientTempService {
             map.put("msg", "温度不能为空！");
             return map;
         }
-        try{
-            patientTempDao.addPatientTemp(patientTemp);
-            patientTempDao.addPatient(patientTemp);
-            patientTempDao.addPatientPosition(patientTemp);
-        }catch (Exception e){
-            logger.error("【addPatientTemp.do】======================异常："+e);
-            errorExceptionService.setErrorCode(1003);
+
+        //查询病人信息是否存在
+        List<PatientTemp> list = patientTempDao.queryPatientExit(patientTemp);
+        if(list.size() > 0){
+            map.put("errorCode", -1);
+            map.put("msg", "病人信息已存在");
+            logger.error("【addPatientTemp.do】###########################出参："+ map);
+            return map;
         }
-        map.put("errorCode", errorExceptionService.getErrorCode());
-        map.put("msg", errorExceptionService.getMsg());
-        logger.error("【addPatientTemp.do】###########################出参："+ map);
+//        插入病人信息
+        patientTempDao.addPatientTemp(patientTemp);
+        patientTempDao.addPatient(patientTemp);
+        patientTempDao.addPatientPosition(patientTemp);
         return map;
     }
 }
+
+
